@@ -4,7 +4,7 @@
     angular.module('app')
     .controller('AppController', AppController);
 
-    function AppController($scope, $state, $mdDialog, $location, localStorageService, AuthenticationService, AuthorizationService, accountDetailPromise, permissionsPromise, Utils) {
+    function AppController($scope, $state, $location) {
         var vm = this;
         var self = this;
 

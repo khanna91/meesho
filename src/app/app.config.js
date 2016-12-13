@@ -6,9 +6,9 @@
         .config(routeConfig);
 
     /* @ngInject */
-    function routeConfig($stateProvider, $urlRouterProvider, $httpProvider, API_CONFIG) {
+    function routeConfig($stateProvider, $urlRouterProvider, $httpProvider) {
         $urlRouterProvider
-                .otherwise('/');
+            .otherwise('/home');
         $stateProvider
             .state('404', {
                 url: '/404',

@@ -12,19 +12,19 @@ gulp.paths = {
 require('require-dir')('./gulp');
 
 gulp.task('buildlocal', ['clean'], function () {
-    gulp.paths.googleMapKey = 'AIzaSyBV-fObQiqREESuJkBPz380TYyRuxaEl68';
+    gulp.paths.googleMapKey = 'AIzaSyCL-mduxahO1neIBX2HYWduSitYKgkULUk';
     gulp.env = 'local';
     gulp.start('buildapp-local');
 });
 
 gulp.task('builddev', ['clean'], function () {
-    gulp.paths.googleMapKey = 'AIzaSyAfvi8QnLhHSmNQktOfo_i3nlV4n3fJi8k';
+    gulp.paths.googleMapKey = 'AIzaSyCL-mduxahO1neIBX2HYWduSitYKgkULUk';
     gulp.env = 'staging';
     gulp.start('buildapp');
 });
 
 gulp.task('buildprod', ['clean'], function () {
-    gulp.paths.googleMapKey = 'AIzaSyAfvi8QnLhHSmNQktOfo_i3nlV4n3fJi8k';
+    gulp.paths.googleMapKey = 'AIzaSyCL-mduxahO1neIBX2HYWduSitYKgkULUk';
     gulp.env = 'production';
     gulp.start('buildapp');
 });
