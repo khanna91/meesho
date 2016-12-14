@@ -12,6 +12,18 @@
             version : '1.0.0'
         }
 
+        $scope.user = {
+            location : {}
+        }
+
+        $scope.setUserLocation= function(location) {
+            $scope.user.location = location;
+        }
+
+        $scope.getUserLocation= function() {
+            return $scope.user.location;
+        }
+
         // Checks if the given state is the current state
         $scope.is = function(name, params) {
             return $state.is(name, params);

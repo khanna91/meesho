@@ -6,12 +6,11 @@
 
     function HomeController($scope, $state, $timeout) {
         var vm = this;
-        vm.place = '';
         vm.placeModel = '';
         vm.searchForResturant = searchForResturant;
 
         function searchForResturant() {
-            $state.go('app.search', {'location' : vm.placeModel.name, placeDto : vm.placeModel});
+            $state.go('app.search', {'location' : vm.placeModel.name.toLowerCase(), 'placeModel' : vm.placeModel});
         }
 
         function init() {
@@ -31,6 +30,7 @@
                 }
                 $timeout(function () {
                     vm.placeModel = place;
+                    $scope.setUserLocation(vm.placeModel);
                 });
             });
         }

@@ -4,6 +4,6 @@
     angular.module('app', [
         'ui.router', 'ngMessages', 'ngSanitize', 'ngAnimate',
         // custom modules
-        'utils', 'home'
+        'utils', 'home', 'search'
     ]);
 })();
