@@ -5,7 +5,7 @@
         .module('utils')
         .factory('Utils', Utils);
 
-    function Utils ($timeout, $window, $location, $cookies, localStorageService) {
+    function Utils ($timeout, $window, $location) {
         var service = {
             getNumberOrDefault: function (number, defaultValue) {
                 if (this.isUndefinedOrNull(defaultValue)) {
