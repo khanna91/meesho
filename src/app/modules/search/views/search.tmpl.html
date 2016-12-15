@@ -24,7 +24,7 @@
                                         </a>
                                     </div>
                                     <div class="content">
-                                        <div class="cuisines">{{ restaurant.cuisines | ellipse : 45}}</div>
+                                        <div class="cuisines nowrap">{{ restaurant.cuisines | ellipse : 45}}</div>
                                         <div class="title"><a ng-click="vm.openResturant(restaurant.id)">{{ restaurant.name }}</a></div>
                                         <div class="locality">{{ restaurant.location.city }}</div>
                                         <div class="address nowrap">{{ restaurant.location.address }}</div>

@@ -6,6 +6,12 @@
         }
     }
 
+    @media (max-width: $screen-xs-max) {
+        #map-listing {
+            display: none;
+        }
+    }
+
     .scrollable-container {
         height: calc(100vh - 105px);
         padding: 0 10px;
@@ -76,6 +82,7 @@
                     color: #89959B;
                     font-size: 11px;
                     text-transform: uppercase;
+                    max-width: 52%;
                 }
                 .title > a{
                     color: #11ABB0;

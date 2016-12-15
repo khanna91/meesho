@@ -86,6 +86,11 @@ a {
             color: #CCC;
         }
     }
+    @media (max-width: $screen-xs-max) {
+        .footer-divider {
+            padding-top: 0;
+        }
+    }
     .footer-links {
         > li {
             padding: 0 0 8px;

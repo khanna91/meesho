@@ -26,13 +26,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row m-t-50">
-                <div class="col-sm-3" ng-repeat="resturant in vm.featuredResturants track by $index">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3" ng-repeat="resturant in vm.featuredResturants track by $index">
                     <a href="javascript:;" class="featured-category">
                         <img ng-src="{{resturant.image}}" alt={{resturant.name}} class="img-responsive">
                         <div class="content">
                             <div class="featured-name">{{ resturant.name }}</div>
-                            <div class="featured-location"><i class="fa fa-map-marker"></i> {{ resturant.location | ellipse : 40 }}</div>
+                            <div class="featured-location nowrap"><i class="fa fa-map-marker"></i> {{ resturant.location }}</div>
                         </div>
                     </a>
                 </div>

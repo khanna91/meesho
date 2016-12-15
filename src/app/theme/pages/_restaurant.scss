@@ -69,6 +69,19 @@
                 }
             }
         }
+        @media (max-width: $screen-xs-max) {
+            .restaurant-top-inner {
+                height: auto;
+                .detail {
+                    .row {
+                        flex-direction: column;
+                        .detail-header {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .resturant-middle-section {
