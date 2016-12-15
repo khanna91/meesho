@@ -2,21 +2,34 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4 padding-0">
+                <div class="list-search-form">
+                    <div class="search-box">
+                        <div class="input-group search-input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control" ng-model="vm.place" placeholder="Search resturants by location" id="location-search-input">
+                        </div>
+                    </div>
+                </div>
                 <div class="scrollable-container">
                     <ul class="list-unstyled search-result">
-                        <li ng-repeat="resturant in vm.resturants track by $index">
+                        <li ng-repeat="restaurant in vm.restaurants track by $index">
                             <div class="row">
                                 <div class="col-xs-12 resturant-card">
                                     <div class="thumb-img">
-                                        <img ng-src="{{resturant.thumb}}" alt={{resturant.name}} class="img-responsive">
+                                        <a ng-click="vm.openResturant(restaurant.id)">
+                                            <img ng-src="{{restaurant.thumb}}" alt={{restaurant.name}} ng-if="restaurant.thumb">
+                                            <img ng-src="/assets/img/img-not-available.jpg" alt={{restaurant.name}} ng-if="!restaurant.thumb">
+                                        </a>
                                     </div>
                                     <div class="content">
-                                        <div class="cuisines">{{ resturant.cuisines }}</div>
-                                        <div class="title"><a ng-click="vm.openResturant(resturant.id)">{{ resturant.name }}</a></div>
-                                        <div class="locality">{{ resturant.location.city }}</div>
-                                        <div class="address nowrap">{{ resturant.location.address }}</div>
+                                        <div class="cuisines">{{ restaurant.cuisines }}</div>
+                                        <div class="title"><a ng-click="vm.openResturant(restaurant.id)">{{ restaurant.name }}</a></div>
+                                        <div class="locality">{{ restaurant.location.city }}</div>
+                                        <div class="address nowrap">{{ restaurant.location.address }}</div>
                                         <div class="rating-section">
-                                            <div class="rating-point" style="background:#{{resturant.user_rating.rating_color}}">{{resturant.user_rating.aggregate_rating}}</div>
+                                            <div class="rating-point" style="background:#{{restaurant.user_rating.rating_color}}">{{restaurant.user_rating.aggregate_rating}}</div>
                                         </div>
                                     </div>
                                 </div>

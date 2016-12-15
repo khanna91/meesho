@@ -34,7 +34,7 @@
         }
 
         function listResturants(lat, lon) {
-            var url = 'https://developers.zomato.com/api/v2.1/search?lat=' + lat + '&lon=' + lon;
+            var url = 'https://developers.zomato.com/api/v2.1/search?lat=' + lat + '&lon=' + lon + '&sort=rating&order=desc';
             return $http({
                 url: url,
                 method: 'GET',

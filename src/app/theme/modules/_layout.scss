@@ -162,3 +162,16 @@ a {
         }
     }
 }
+
+.loading-bar {
+    position: fixed;
+    z-index : 1100;
+    top: 64px;
+    border: 1px #f0c36d solid;
+    background: #f9edbe;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #000;
+    padding: 0px 20px;
+    left: 50%;
+    margin-left: -36px;
+}

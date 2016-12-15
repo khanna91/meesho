@@ -40,6 +40,12 @@
                 .search-box {
                     border-radius: 5px;
                     width: 450px;
+                    .form-control {
+                        border: 0;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
                 }
             }
         }
