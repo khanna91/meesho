@@ -1,0 +1,84 @@
+#search-page {
+    #map-listing {
+        height: calc(100vh - 50px);
+        #map {
+            height: 100%;
+        }
+    }
+
+    .scrollable-container {
+        height: calc(100vh - 50px);
+        padding: 0 10px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        &::-webkit-scrollbar-track {
+            border-radius: 0;
+            background: #e5e9ed;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #c6cdd7;
+            border-radius: 0;
+            outline: 0;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+    }
+
+    .search-result {
+        padding: 20px 0 0;
+        margin-bottom: 0;
+        li {
+            background: #FFF;
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+            .resturant-card {
+                .thumb-img {
+                    float: left;
+                    margin-right: 10px;
+                }
+                .content {
+                    padding: 5px 0;
+                    font-size: 1em;
+                    position: relative;
+                    .cuisines {
+                        color: #89959B;
+                        font-size: 11px;
+                        text-transform: uppercase;
+                    }
+                    .title > a{
+                        color: #11ABB0;
+                        font-size: 18px;
+                        line-height: 22px;
+                        font-weight: 700;
+                    }
+                    .locality {
+                        color: #33373D;
+                    }
+                    .address {
+                        color: #89959B;
+                    }
+                    .rating-section {
+                        position: absolute;
+                        right: 8px;
+                        top: 8px;
+                        .rating-point {
+                            color: #fff;
+                            cursor: default;
+                            border-radius: 4px;
+                            font-size: 16px;
+                            height: 25px;
+                            line-height: 23px;
+                            text-align: center;
+                            width: 36px;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

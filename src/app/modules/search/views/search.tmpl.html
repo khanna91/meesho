@@ -1,3 +1,35 @@
 <div id="search-page">
-    this is search page
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 padding-0">
+                <div class="scrollable-container">
+                    <ul class="list-unstyled search-result">
+                        <li ng-repeat="resturant in vm.resturants track by $index">
+                            <div class="row">
+                                <div class="col-xs-12 resturant-card">
+                                    <div class="thumb-img">
+                                        <img ng-src="{{resturant.thumb}}" alt={{resturant.name}} class="img-responsive">
+                                    </div>
+                                    <div class="content">
+                                        <div class="cuisines">{{ resturant.cuisines }}</div>
+                                        <div class="title"><a ng-click="vm.openResturant(resturant.id)">{{ resturant.name }}</a></div>
+                                        <div class="locality">{{ resturant.location.city }}</div>
+                                        <div class="address nowrap">{{ resturant.location.address }}</div>
+                                        <div class="rating-section">
+                                            <div class="rating-point" style="background:#{{resturant.user_rating.rating_color}}">{{resturant.user_rating.aggregate_rating}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-8 p-l-0 p-r-0">
+                <div id="map-listing">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
