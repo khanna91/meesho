@@ -1,4 +1,5 @@
 <div id="restaurant-page">
+    <!-- Restaurant Header Section -->
     <div class="restaurant-top-section" style="background-image:url({{vm.restaurant.featured_image}});">
         <div class="container">
             <div class="restaurant-top-inner">
@@ -38,7 +39,56 @@
     <div class="resturant-middle-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8"></div>
+                <!-- Resturant Detail Section -->
+                <div class="col-sm-8">
+                    <div class="container-fluid resturant-detail-section" id="resturant-overview">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Overview</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Section -->
+                    <div class="container-fluid resturant-detail-section" id="resturant-reviews">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Reviews <span class="badge" ng-if="vm.reviews.reviews_count">{{ vm.reviews.reviews_count }}</span></h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <ul class="list-unstyled review-list">
+                                    <li class="review-container" ng-repeat="rev in vm.reviews.user_reviews track by $index">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <div class="review-user-info">
+                                                    <img ng-src="{{rev.review.user.profile_image}}" alt={{rev.review.user.name}} class="img-circle img-thumbnail" ng-if="rev.review.user.profile_image">
+                                                    <img ng-src="/assets/img/img-not-available.jpg" alt={{restaurant.name}} ng-if="!rev.review.user.profile_image">
+                                                    <div class="user-content">
+                                                        <span class="user-name">{{rev.review.user.name}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <p class="review-text">{{rev.review.review_text}}</p>
+                                                <span class="review-time">{{rev.review.review_time_friendly}}</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="review-container" ng-if="!vm.reviews.user_reviews.length">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="alert alert-info">Seems, no one revieved yet. Be a champ and write a review.</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 text-center" ng-if="vm.reviews.reviews_count > vm.reviews.reviews_shown">
+                                <button class="btn btn-primary">Load More Reviews</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Search Section -->
                 <div class="col-sm-4">
                     <p class="related-search-text">Related Search</p>
                     <ul class="list-unstyled search-result">

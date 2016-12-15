@@ -97,4 +97,57 @@
             padding-top: 0;
         }
     }
+
+    .resturant-detail-section {
+        background: #FFF;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        h3 {
+            color: #eb4e85;
+            padding-bottom: 10px;
+            border-bottom: 1px #f2f2f2 solid;
+
+            span {
+                font-size: 16px;
+                font-weight: 300;
+                margin-left: 5px;
+                margin-top: -3px;
+            }
+        }
+    }
+    .review-list {
+        .review-container {
+            display: block;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px #f2f2f2 solid;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .review-user-info {
+                margin: 0 auto;
+                text-align: center;
+                img {
+                    width : 60px;
+                }
+                .user-content {
+                    padding: 10px 0;
+                    .user-name {
+                        color: #000;
+                        font-weight: 700;
+                        font-size: 14px;
+                        display: block;
+                    }
+                }
+            }
+            .review-text {
+                margin-bottom: 5px;
+            }
+            .review-time {
+                color: #aaa;
+                font-size: 11px;
+            }
+        }
+    }
 }

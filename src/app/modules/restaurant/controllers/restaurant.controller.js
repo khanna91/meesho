@@ -9,6 +9,7 @@
         vm.ratingSet = [1,2,3,4,5];
         vm.restaurant = {};
         vm.relatedSearch = [];
+        vm.reviews = [];
         vm.loading = true;
 
         function init() {
@@ -29,7 +30,17 @@
                             }
                         });
                         vm.loading = false;
+                    }).catch(function(error) {
+                        console.log(error);
                     });
+                }).catch(function(error) {
+                    console.log(error);
+                });
+                // fetch restaurant reviews
+                SearchService.listReviews($stateParams.restaurantId).then(function(response) {
+                    vm.reviews = response;
+                }).catch(function(error) {
+                    console.log(error);
                 });
             }
         }
