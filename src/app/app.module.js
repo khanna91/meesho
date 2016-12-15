@@ -10,7 +10,7 @@
     angular.module('app', [
         'ui.router', 'ngMessages', 'ngSanitize', 'ngAnimate',
         // custom modules
-        'utils', 'home', 'search'
+        'utils', 'home', 'search', 'restaurant'
     ]).constant('API_CONFIG', {
         zomatoApiKey: function () {
             return (zomatoApi.indexOf('{zomatoApiKey}') >= 0) ? localZomatoApiKey : zomatoApi;

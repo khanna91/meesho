@@ -14,7 +14,7 @@
         vm.lng = 77.6057951152;
 
         function openResturant(id) {
-            console.log(id);
+            $state.go('app.restaurant', {restaurantId : id});
         }
 
         function formatResponse(data) {
@@ -73,33 +73,31 @@
                 scrollwheel: false
             });
 
-            // a new Info Window is created
-           infoWindow = new google.maps.InfoWindow();
+            infoWindow = new google.maps.InfoWindow();
 
-           // Event that closes the InfoWindow with a click on the map
-           google.maps.event.addListener(map, 'click', function() {
-              infoWindow.close();
-           });
+            google.maps.event.addListener(map, 'click', function() {
+                infoWindow.close();
+            });
 
-           displayMarkers();
+            displayMarkers();
 
-           // set user location
-           var bounds = new google.maps.LatLngBounds();
-           var marker = new google.maps.Marker({
-               map: map,
-               position: mapLocation,
-               title: 'Your location',
-               icon : 'assets/img/position.png'
-           });
-           google.maps.event.addListener(marker, 'click', function() {
-               var iwContent = '<div id="iw_container">' +
-               '<div class="iw_title">Location you searched for : '+ vm.place +'</div></div>';
+            // set user location
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                map: map,
+                position: mapLocation,
+                title: 'Your location',
+                icon : 'assets/img/position.png'
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                var iwContent = '<div id="iw_container">' +
+                '<div class="iw_title">Location you searched for : '+ vm.place +'</div></div>';
 
-               infoWindow.setContent(iwContent);
+                infoWindow.setContent(iwContent);
 
-               infoWindow.open(map, marker);
-           });
-           bounds.extend(mapLocation);
+                infoWindow.open(map, marker);
+            });
+            bounds.extend(mapLocation);
         }
 
         function init() {
