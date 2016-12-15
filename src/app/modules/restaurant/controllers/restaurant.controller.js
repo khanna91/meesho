@@ -24,7 +24,7 @@
                         // Remove resturant with same id (childish way, but what can be done...limited API support)
                         var count = 1;
                         angular.forEach(response.restaurants, function(restaurant, index) {
-                            if(restaurant.restaurant.id != vm.restaurant.id && count < 6) {
+                            if(restaurant.restaurant.id != vm.restaurant.id && count < 10) {
                                 vm.relatedSearch.push(restaurant.restaurant);
                                 count++;
                             }
