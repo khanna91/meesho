@@ -42,64 +42,67 @@
             }
         }
     }
+}
 
-    .search-result {
-        padding: 20px 0 0;
+.search-result {
+    padding: 20px 0 0;
+    margin-bottom: 10px;
+    .alert {
         margin-bottom: 0;
-        li {
-            background: #FFF;
-            margin-bottom: 10px;
-            a {
-                cursor: pointer;
-            }
-            &:last-child {
-                margin-bottom: 0px;
-            }
-            .resturant-card {
-                .thumb-img {
-                    float: left;
-                    margin-right: 10px;
-                    img {
-                        width: 100px;
-                        height: 100px;
-                    }
+    }
+    li {
+        background: #FFF;
+        margin-bottom: 10px;
+        a {
+            cursor: pointer;
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+        .resturant-card {
+            .thumb-img {
+                float: left;
+                margin-right: 10px;
+                img {
+                    width: 120px;
+                    height: 90px;
                 }
-                .content {
-                    padding: 5px 0;
-                    font-size: 1em;
-                    position: relative;
-                    .cuisines {
-                        color: #89959B;
-                        font-size: 11px;
-                        text-transform: uppercase;
-                    }
-                    .title > a{
-                        color: #11ABB0;
-                        font-size: 18px;
-                        line-height: 22px;
-                        font-weight: 700;
-                    }
-                    .locality {
-                        color: #33373D;
-                    }
-                    .address {
-                        color: #89959B;
-                    }
-                    .rating-section {
-                        position: absolute;
-                        right: 8px;
-                        top: 8px;
-                        .rating-point {
-                            color: #fff;
-                            cursor: default;
-                            border-radius: 4px;
-                            font-size: 16px;
-                            height: 25px;
-                            line-height: 23px;
-                            text-align: center;
-                            width: 36px;
-                            margin: 0 auto;
-                        }
+            }
+            .content {
+                padding: 5px 0;
+                font-size: 1em;
+                position: relative;
+                .cuisines {
+                    color: #89959B;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                }
+                .title > a{
+                    color: #11ABB0;
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-weight: 700;
+                }
+                .locality {
+                    color: #33373D;
+                }
+                .address {
+                    color: #89959B;
+                }
+                .rating-section {
+                    position: absolute;
+                    right: 8px;
+                    top: 8px;
+                    .rating-point {
+                        color: #fff;
+                        cursor: default;
+                        border-radius: 4px;
+                        font-size: 16px;
+                        height: 25px;
+                        line-height: 23px;
+                        text-align: center;
+                        width: 36px;
+                        margin: 0 auto;
                     }
                 }
             }

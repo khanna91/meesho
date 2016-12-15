@@ -35,6 +35,13 @@
                                 </div>
                             </div>
                         </li>
+                        <li ng-if="!vm.restaurants.length && !vm.loading">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="alert alert-info">Seems, no resturant found. Please try different location.</div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

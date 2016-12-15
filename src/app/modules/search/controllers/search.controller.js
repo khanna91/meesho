@@ -8,6 +8,7 @@
         var vm = this;
         vm.openResturant = openResturant;
         vm.restaurants = [];
+        vm.loading = true;
         vm.place = '';
         var map, infoWindow;
         vm.lat = 12.9857943415;
@@ -21,7 +22,6 @@
             var _data = [];
             angular.forEach(data, function(res, index) {
                 var temp = res.restaurant;
-                temp.rating = parseFloat(temp.user_rating.aggregate_rating);
                 _data.push(temp);
             });
             return _data;
@@ -29,10 +29,12 @@
 
         function getResturantList(lat, lng) {
             $scope.setLoading();
+            vm.loading = true;
             SearchService.listResturants(lat, lng).then(function(response) {
                 vm.restaurants = formatResponse(response.restaurants);
                 setMap(lat, lng);
                 $scope.clearLoading();
+                vm.loading = false;
             });
         }
 

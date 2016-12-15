@@ -10,6 +10,7 @@
 
         service.fetchLocation = fetchLocation;
         service.listResturants = listResturants;
+        service.getRestaurant = getRestaurant;
 
         return service;
 
@@ -35,6 +36,21 @@
 
         function listResturants(lat, lon) {
             var url = 'https://developers.zomato.com/api/v2.1/search?lat=' + lat + '&lon=' + lon + '&sort=rating&order=desc';
+            return $http({
+                url: url,
+                method: 'GET',
+                headers: {
+                     'Pragma': undefined,
+                     'Cache-Control': undefined,
+                     'X-Requested-With': undefined,
+                     'If-Modified-Since': undefined,
+                     'user-key': API_CONFIG.zomatoApiKey
+                },
+            }).then(getResponse).catch(getError);
+        }
+
+        function getRestaurant(restaurantId) {
+            var url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id=' + restaurantId;
             return $http({
                 url: url,
                 method: 'GET',

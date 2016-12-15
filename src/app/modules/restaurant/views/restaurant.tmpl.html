@@ -1,3 +1,78 @@
 <div id="restaurant-page">
-    Restaurant Detail Page
+    <div class="restaurant-top-section" style="background-image:url({{vm.restaurant.featured_image}});">
+        <div class="container">
+            <div class="restaurant-top-inner">
+                <div class="detail">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="detail-header">
+                                <div class="detail-header-inner">
+                                    <h3>{{ vm.restaurant.name }}</h3>
+                                    <p class="location">
+                                        <i class="fa fa-map-marker"></i>
+                                        {{ vm.restaurant.location.address }}
+                                    </p>
+                                    <div class="rating-wrapper">
+                                        <div class="rating-item" style="background:#{{vm.restaurant.user_rating.rating_color}}">
+                                            {{ vm.restaurant.user_rating.aggregate_rating }}<span>/5</span>
+                                        </div>
+                                        <div class="texting">
+                                             based on {{ vm.restaurant.user_rating.votes }} votes
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="action-triggers">
+                                <button class="btn btn-success">Order Online</button>
+                                <button class="btn btn-danger">Add a Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="resturant-middle-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8"></div>
+                <div class="col-sm-4">
+                    <p class="related-search-text">Related Search</p>
+                    <ul class="list-unstyled search-result">
+                        <li ng-repeat="restaurant in vm.relatedSearch track by $index">
+                            <div class="row">
+                                <div class="col-xs-12 resturant-card">
+                                    <div class="thumb-img">
+                                        <a ng-click="vm.openResturant(restaurant.id)">
+                                            <img ng-src="{{restaurant.thumb}}" alt={{restaurant.name}} ng-if="restaurant.thumb">
+                                            <img ng-src="/assets/img/img-not-available.jpg" alt={{restaurant.name}} ng-if="!restaurant.thumb">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <div class="cuisines nowrap">{{ restaurant.cuisines | ellipse : 30}}</div>
+                                        <div class="title"><a ng-click="vm.openResturant(restaurant.id)">{{ restaurant.name }}</a></div>
+                                        <div class="locality">{{ restaurant.location.city }}</div>
+                                        <div class="address nowrap">{{ restaurant.location.address }}</div>
+                                        <div class="rating-section">
+                                            <div class="rating-point" style="background:#{{restaurant.user_rating.rating_color}}">{{restaurant.user_rating.aggregate_rating}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li ng-if="!vm.relatedSearch.length && !vm.loading">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="alert alert-info">Seems, no other resturant found near this location.</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
