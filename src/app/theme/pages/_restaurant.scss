@@ -120,6 +120,12 @@
         .view-more {
             font-size: 12px;
         }
+        .thumb-img {
+            img {
+                max-height: 150px;
+                width: 100%;
+            }
+        }
         .overview-description-item {
             margin-bottom: 10px;
             label {

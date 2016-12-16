@@ -15,15 +15,15 @@ gulp.task('partials', function () {
         paths.src + '/app/**/*.html',
         paths.tmp + '/app/**/*.html'
     ])
-        .pipe($.if(function (file) {
-                return $.match(file, ['!**/examples/*.html']);
-            },
-            $.minifyHtml({
-                empty: true,
-                spare: true,
-                quotes: true
-            }))
-        )
+        // .pipe($.if(function (file) {
+        //         return $.match(file, ['!**/examples/*.html']);
+        //     },
+        //     $.minifyHtml({
+        //         empty: true,
+        //         spare: true,
+        //         quotes: true
+        //     }))
+        // )
         .pipe($.angularTemplatecache('templateCacheHtml.js', {
             module: 'app',
             root: 'app'
@@ -131,37 +131,9 @@ gulp.task('assets', function () {
         .pipe(gulp.dest(paths.dist + '/assets/'));
 });
 
-gulp.task('images', function () {
-    return gulp.src(paths.src + '/assets/img/**/*')
-        .pipe(gulp.dest(paths.dist + '/assets/img/'));
-});
-
-gulp.task('plugins', function () {
-    return gulp.src(paths.src + '/assets/plugins/**/*')
-        .pipe(gulp.dest(paths.dist + '/assets/plugins/'));
-});
-
-gulp.task('fonts', function () {
-    return gulp.src($.mainBowerFiles())
-        .pipe($.filter('**/*.{eot,otf,svg,ttf,woff,woff2}'))
-        .pipe($.flatten())
-        .pipe(gulp.dest(paths.dist + '/fonts/'));
-});
-
-gulp.task('data', function () {
-    return gulp.src('src/**/data/*.json')
-        .pipe(gulp.dest(paths.dist + '/'))
-        .pipe($.size());
-});
-
-gulp.task('misc', function () {
-    return gulp.src(paths.src + '/favicon.png')
-        .pipe(gulp.dest(paths.dist + '/'));
-});
-
 gulp.task('clean', function (done) {
     $.del([paths.dist + '/', paths.tmp + '/'], {'force': true}, done);
 });
 
-gulp.task('buildapp', ['html', 'assets', 'fonts', 'misc', 'data']);
-gulp.task('buildapp-local', ['html-local', 'assets', 'fonts', 'misc', 'data']);
+gulp.task('buildapp', ['html', 'assets']);
+gulp.task('buildapp-local', ['html-local', 'assets']);
