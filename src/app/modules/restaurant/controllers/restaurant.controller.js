@@ -16,6 +16,7 @@
             if(Utils.isUndefinedOrNullOrEmpty($stateParams.restaurantId)) {
                 $state.go('app.home');
             } else {
+                $scope.setLoading();
                 SearchService.getRestaurant($stateParams.restaurantId).then(function(response) {
                     vm.restaurant = response;
                     vm.loading = true;
@@ -30,6 +31,7 @@
                             }
                         });
                         vm.loading = false;
+                        $scope.clearLoading();
                     }).catch(function(error) {
                         console.log(error);
                     });

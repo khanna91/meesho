@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('search')
-        .factory('SearchService', SearchService);
+    .module('search')
+    .factory('SearchService', SearchService);
 
     function SearchService($http, Utils, API_CONFIG) {
         var service = {};
@@ -30,7 +30,8 @@
                 url: url,
                 method: 'GET',
                 headers: {
-                     'Pragma': undefined, 'Cache-Control': undefined, 'X-Requested-With': undefined, 'If-Modified-Since': undefined
+                    // adding these headers to bypass cors issue
+                    'Pragma': undefined, 'Cache-Control': undefined, 'X-Requested-With': undefined, 'If-Modified-Since': undefined
                 },
             }).then(getResponse).catch(getError);
         }
@@ -41,11 +42,12 @@
                 url: url,
                 method: 'GET',
                 headers: {
-                     'Pragma': undefined,
-                     'Cache-Control': undefined,
-                     'X-Requested-With': undefined,
-                     'If-Modified-Since': undefined,
-                     'user-key': API_CONFIG.zomatoApiKey
+                    'user-key': API_CONFIG.zomatoApiKey,
+                    // adding these headers to bypass cors issue
+                    'Pragma': undefined,
+                    'Cache-Control': undefined,
+                    'X-Requested-With': undefined,
+                    'If-Modified-Since': undefined
                 },
             }).then(getResponse).catch(getError);
         }
@@ -56,11 +58,12 @@
                 url: url,
                 method: 'GET',
                 headers: {
-                     'Pragma': undefined,
-                     'Cache-Control': undefined,
-                     'X-Requested-With': undefined,
-                     'If-Modified-Since': undefined,
-                     'user-key': API_CONFIG.zomatoApiKey
+                    'user-key': API_CONFIG.zomatoApiKey,
+                    // adding these headers to bypass cors issue
+                    'Pragma': undefined,
+                    'Cache-Control': undefined,
+                    'X-Requested-With': undefined,
+                    'If-Modified-Since': undefined
                 },
             }).then(getResponse).catch(getError);
         }
@@ -71,11 +74,12 @@
                 url: url,
                 method: 'GET',
                 headers: {
-                     'Pragma': undefined,
-                     'Cache-Control': undefined,
-                     'X-Requested-With': undefined,
-                     'If-Modified-Since': undefined,
-                     'user-key': API_CONFIG.zomatoApiKey
+                    'user-key': API_CONFIG.zomatoApiKey,
+                    // adding these headers to bypass cors issue
+                    'Pragma': undefined,
+                    'Cache-Control': undefined,
+                    'X-Requested-With': undefined,
+                    'If-Modified-Since': undefined
                 },
             }).then(getResponse).catch(getError);
         }
