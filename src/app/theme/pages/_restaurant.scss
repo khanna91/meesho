@@ -139,6 +139,33 @@
                 color: #aaa;
                 font-size: 12px;
             }
+            ul {
+                > li {
+                    margin-bottom: 5px;
+                    &:first-child {
+                        margin-top: 5px;
+                    }
+                    &.available,
+                    &.not-available  {
+                        &:before {
+                            font-family: 'FontAwesome';
+                            margin-right: 2px;
+                        }
+                    }
+                    &.available {
+                        &:before {
+                            content : "\f00c";
+                            color: #099E44;
+                        }
+                    }
+                    &.not-available {
+                        &:before {
+                            content : "\f00d";
+                            color: #CB202D;
+                        }
+                    }
+                }
+            }
         }
     }
     .review-list {

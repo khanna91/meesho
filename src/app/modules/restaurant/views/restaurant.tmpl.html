@@ -56,7 +56,7 @@
                                     <img ng-src="/assets/img/img-not-available.jpg" alt="" class="m-b-5 img-responsive img-rounded img-thumbnail">
                                 </div>
                                 <a href="{{vm.restaurant.photos_url}}" target="_blank" class="view-more">View more photos</a>
-                                <button class="btn btn-block btn-meesho m-t-10">Book a table</button>
+                                <button class="btn btn-block btn-meesho m-t-10 m-b-20">Book a table</button>
                             </div>
                             <div class="col-sm-8">
                                 <div class="row">
@@ -78,7 +78,21 @@
                                             <div class="help-text">VAT & service charge extra</div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-6"></div>
+                                    <div class="col-xs-6">
+                                        <div class="overview-description-item">
+                                            <label>Services Available</label>
+                                            <!-- Zomato Api doesn't provide available services also -->
+                                            <ul class="list-unstyled">
+                                                <li class="available">Home Delivery</li>
+                                                <li class="available">Liquor Available</li>
+                                                <li class="available">Air Conditioned</li>
+                                                <li class="available">Wifi</li>
+                                                <li class="not-available">Catering</li>
+                                                <li class="not-available">Take Away</li>
+                                                <li class="available">Smoking</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
