@@ -11,6 +11,11 @@
         vm.relatedSearch = [];
         vm.reviews = [];
         vm.loading = true;
+        vm.openResturant = openResturant;
+
+        function openResturant(id) {
+            $state.go('app.restaurant', {restaurantId : id});
+        }
 
         function init() {
             if(Utils.isUndefinedOrNullOrEmpty($stateParams.restaurantId)) {

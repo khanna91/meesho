@@ -135,13 +135,14 @@
 .block{
     display: block;
 }
-
+.no-visibility {
+    visibility: hidden;   
+}
 [ng-click],
 [data-ng-click],
 [x-ng-click] {
     cursor: pointer;
 }
-
 .nowrap {
     overflow: hidden;
     text-overflow: ellipsis;
