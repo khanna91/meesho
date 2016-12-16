@@ -55,7 +55,31 @@
                                 <div ng-if="!vm.restaurant.thumb">
                                     <img ng-src="/assets/img/img-not-available.jpg" alt="" class="m-b-5 img-responsive img-rounded img-thumbnail">
                                 </div>
-                                <a href="javascript:;">View more photos</a>
+                                <a href="{{vm.restaurant.photos_url}}" target="_blank" class="view-more">View more photos</a>
+                                <button class="btn btn-block btn-meesho m-t-10">Book a table</button>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="overview-description-item">
+                                            <label>Phone Numbers</label>
+                                            <!-- Zomota Api doesn't give mobile numbers -->
+                                            <span class="text phone-number"><a href="tel:+919911221076">9911221076</a></span>
+                                        </div>
+                                        <div class="overview-description-item">
+                                            <label>Cuisines</label>
+                                            <span class="text">{{ vm.restaurant.cuisines }}</span>
+
+                                        </div>
+                                        <div class="overview-description-item">
+                                            <label>Cost</label>
+                                            <div class="help-text">AVERAGE</div>
+                                            <span class="text"><i class="fa fa-inr"></i> {{ vm.restaurant.average_cost_for_two }}, for two people (approx.)</span>
+                                            <div class="help-text">VAT & service charge extra</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

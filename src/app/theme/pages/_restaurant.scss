@@ -117,8 +117,28 @@
         }
     }
     #restaurant-overview {
-        .thumb-img {
-            
+        .view-more {
+            font-size: 12px;
+        }
+        .overview-description-item {
+            margin-bottom: 10px;
+            label {
+                display: block;
+                margin-bottom: 0;
+            }
+            .phone-number {
+                a {
+                    font-size: 18px;
+                    letter-spacing: 1.5px;
+                    color: #eb4e85;
+                    margin-top: 2px;
+                    display: inline-block;
+                }
+            }
+            .help-text {
+                color: #aaa;
+                font-size: 12px;
+            }
         }
     }
     .review-list {
