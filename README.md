@@ -18,7 +18,7 @@ $ bower install                 # Install project dependencies
 $ gulp buildlocal               # Compile and build assets and all in local mode
 $ gulp builddev                 # Compile and build assets and all in dev mode
 $ gulp buildprod                # Compile and build assets and all in prod mode
-$ static -p 3010 dist/          # Starts the server and launch app
+$ static -p 3010 dist/          # Starts the server and launch app (in case, you find any error please install node-static globally)
 ```
 
 ##### Points to keep in mind
