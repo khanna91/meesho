@@ -43,7 +43,7 @@ $ http://localhost:3010
 
 ```
 .
-├── dist                     # Build/Start scripts
+├── dist                     # Contains final code after compilation and minification
 ├── gulp                     # Gulp task to compile and build client side scripts
 ├── config                   # Project configuration settings
 ├── gulp                     # Gulp task to compile and build client side scripts
