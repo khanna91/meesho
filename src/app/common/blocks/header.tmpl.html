@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" id="header" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#toggle-navigation" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="app.home">
+                <img src="/assets/img/meeshologonew.png" class="app-icon-logo" alt="icon logo">
+                <img src="/assets/img/meeshopink.png" class="app-text-logo hidden-xs" alt="text logo">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="toggle-navigation">
+            <ul class="nav navbar-nav visible-xs">
+                <li><a href="javascript:;">Login</a></li>
+            </ul>
+            <div class="navbar-right">
+                <button class="btn btn-meesho">Login</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="loading-bar" ng-if="loading.show">
+    {{ loading.message }}
+</div>
