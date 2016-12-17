@@ -26,6 +26,8 @@ I'm using my personnel keys for zomato and google map. In case you find any issu
 
 Still if you find any issues, feel free to ping me.
 
+**Currently, the search section is fully functional, the other CTA buttons are for UI purpose, and don't have any functionality as such** 
+
 ##### For developers out there
 I also gave support for browser sync which is very useful while developing. In order to use that, after installing all dependencies, simple use
 
