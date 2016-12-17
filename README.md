@@ -10,7 +10,7 @@ $ git clone https://github.com/khanna91/meesho <my-project-name>
 $ cd <my-project-name>
 ```
 
-Then install dependencies and check to see it works
+Then install dependencies and check to see it works, assuming you have npm and bower installed globally ;)
 
 ```bash
 $ npm install                   # Install project dependencies
