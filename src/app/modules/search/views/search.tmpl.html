@@ -1,0 +1,55 @@
+<div id="search-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 padding-0">
+                <div class="list-search-form">
+                    <div class="search-box">
+                        <div class="input-group search-input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control" ng-model="vm.place" placeholder="Search resturants by location" id="location-search-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollable-container">
+                    <ul class="list-unstyled search-result">
+                        <li ng-repeat="restaurant in vm.restaurants track by $index">
+                            <div class="row">
+                                <div class="col-xs-12 resturant-card">
+                                    <div class="thumb-img">
+                                        <a ng-click="vm.openResturant(restaurant.id)">
+                                            <img ng-src="{{restaurant.thumb}}" alt={{restaurant.name}} ng-if="restaurant.thumb">
+                                            <img ng-src="/assets/img/img-not-available.jpg" alt={{restaurant.name}} ng-if="!restaurant.thumb">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <div class="cuisines nowrap">{{ restaurant.cuisines | ellipse : 45}}</div>
+                                        <div class="title"><a ng-click="vm.openResturant(restaurant.id)">{{ restaurant.name }}</a></div>
+                                        <div class="locality">{{ restaurant.location.city }}</div>
+                                        <div class="address nowrap">{{ restaurant.location.address }}</div>
+                                        <div class="rating-section">
+                                            <div class="rating-point" style="background:#{{restaurant.user_rating.rating_color}}">{{restaurant.user_rating.aggregate_rating}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li ng-if="!vm.restaurants.length && !vm.loading">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="alert alert-info">Seems, no resturant found. Please try different location.</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-8 p-l-0 p-r-0">
+                <div id="map-listing">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

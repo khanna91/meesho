@@ -1,0 +1,42 @@
+<div id="home-page">
+    <div class="search-section">
+        <div class="flex">
+            <h1>Find the best resturants, cafés and bar near you</h1>
+            <div class="home-search-form">
+                <div class="search-box">
+                    <div class="input-group search-input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search resturants by location" id="location-input">
+                    </div>
+                </div>
+                <button class="btn btn-meesho" ng-click="vm.searchForResturant()">Search</button>
+            </div>
+        </div>
+        <div class="overlay-screen"></div>
+    </div>
+    <div class="featured-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title text-center">
+                        <h3 class="double-strike"><span>Featured Resturants</span></h3>
+                        <p>Hand-Picked Restaurants with Exclusive Menus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-3" ng-repeat="resturant in vm.featuredResturants track by $index">
+                    <a href="javascript:;" class="featured-category">
+                        <img ng-src="{{resturant.image}}" alt={{resturant.name}} class="img-responsive">
+                        <div class="content">
+                            <div class="featured-name">{{ resturant.name }}</div>
+                            <div class="featured-location nowrap"><i class="fa fa-map-marker"></i> {{ resturant.location }}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
